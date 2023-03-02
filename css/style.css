@@ -94,6 +94,7 @@ body {
 }
 
 .navigate-item {
+  position: relative;
   font-weight: 500;
   line-height: 1.42;
   letter-spacing: 0.02em;
@@ -101,15 +102,24 @@ body {
   color: var(--black);
 }
 
-.navigate-item:active::after {
+.navigate-item::after {
   content: "";
-  display: block;
   position: absolute;
-  width: 42px;
+  width: 100%;
   height: 4px;
   background: var(--blue);
   border-radius: 2px;
-  top: 83px;
+  top: 49px;
+  left: 0;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  visibility: hidden;
+}
+
+.navigate-item:hover::after,
+.navigate-item:active::after,
+.navigate-item:focus::after {
+  visibility: visible;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-section-footer,
@@ -408,6 +418,8 @@ body {
 .portofolio-list li {
   border: 1px solid #eeeeee;
 }
+
+.portofolio-list li:focus,
 .portofolio-list li:hover {
   cursor: pointer;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
@@ -418,12 +430,14 @@ body {
 .project-title {
   padding: 0;
   margin: 20px 24px 0 24px;
+  background: var(--white);
 }
 
 .project-type {
   font-weight: 400;
   padding: 0;
   margin: 4px 24px 20px 24px;
+  background: var(--white);
 }
 
 .envelope,
@@ -432,7 +446,7 @@ body {
   margin-right: 6px;
 }
 
-.envelope:hover:hover,
+.envelope:hover,
 .envelope:focus,
 .smartphone:hover,
 .smartphone:focus {
@@ -491,7 +505,7 @@ body {
   height: 44px;
   border-radius: 22px;
   border: none;
-  transition: background 0.25s;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -521,9 +535,8 @@ body {
   height: 92px;
   border: 1px solid #afb1b8;
   border-radius: 4px;
-  transition: background 1s;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 .logo-icon {
   fill: #afb1b8;
 }
@@ -616,7 +629,7 @@ body {
 }
 
 .is-hidden {
-  translate: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   visibility: hidden;
   opacity: initial;
 }
@@ -631,18 +644,25 @@ body {
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   margin: auto;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-icon {
+  display: inline-block;
+  fill: black;
 }
 
 .modal-button {
   position: absolute;
-  top: 8px;
-  right: 8px;
   width: 30px;
   height: 30px;
   border-radius: 15px;
+  top: 8px;
+  right: 8px;
   color: black;
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-button:focus,
@@ -653,17 +673,17 @@ body {
 
 .portofolio-window {
   position: relative;
+  overflow: hidden;
   width: 370px;
   height: 294px;
   margin-left: auto;
   margin-right: auto;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portofolio-window:focus,
-.portofolio-window:hover > .portofolio-overaly {
+.portofolio-window:hover .portofolio-overaly {
   transform: translatey(0);
-  z-index: 0;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portofolio-overaly {
@@ -673,17 +693,14 @@ body {
   letter-spacing: 0.03em;
   position: absolute;
   top: 0;
-  bottom: 0;
   left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
+  width: 370px;
+  height: 294px;
   color: var(--white);
   background: rgba(33, 150, 243, 0.9);
   overflow: hidden;
   transform: translatey(100%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: -1;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portofolio-overaly p {
   margin: 0;
