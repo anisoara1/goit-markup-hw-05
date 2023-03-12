@@ -71,7 +71,7 @@ body {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.6);
 }
-.navigate-item,
+
 .contact-mail,
 .contact-telephone {
   text-decoration: none;
@@ -79,7 +79,7 @@ body {
   font-size: 14px;
   line-height: 16px;
   letter-spacing: 0.02em;
-  color: #757575;
+  color: var(--medium-grey);
 }
 
 .contact-mail:hover,
@@ -102,6 +102,7 @@ body {
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.navigate-item,
 .navigate-item-index,
 .navigate-item-portofolio {
   position: relative;
