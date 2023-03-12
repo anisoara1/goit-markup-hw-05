@@ -71,7 +71,7 @@ body {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.6);
 }
-
+.navigate-item,
 .contact-mail,
 .contact-telephone {
   text-decoration: none;
@@ -102,7 +102,6 @@ body {
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.navigate-item,
 .navigate-item-index,
 .navigate-item-portofolio {
   position: relative;
@@ -113,7 +112,6 @@ body {
   color: var(--black);
 }
 
-.navigate-item::after,
 .portofolio-page .navigate-item-portofolio::after,
 .studio-page .navigate-item-index::after {
   content: "";
@@ -574,7 +572,7 @@ body {
 .footer {
   display: flex;
   flex-direction: row;
-  gap: 50px;
+  gap: 94px;
 }
 
 .footer-media-section {
@@ -582,7 +580,7 @@ body {
   flex-direction: column;
   gap: 20px;
   align-items: flex-start;
-  margin: 75px auto 0 0;
+  margin: 75px 0 0 0;
 }
 
 .footer-media-section p {
@@ -712,4 +710,14 @@ body {
 .portofolio-overaly p {
   margin: 0;
   padding: 63px 24px 91px 24px;
+}
+
+.send-icon {
+  fill: var(--white);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  margin: 40px;
 }
